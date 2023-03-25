@@ -1,0 +1,27 @@
+name: Testing
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  run-tests:
+    name: Run tests
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      
+      - name: Install python dependencies
+        run: |
+          pip install pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run python tests
+        run: python -m unittest
