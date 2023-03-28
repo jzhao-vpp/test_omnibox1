@@ -6,9 +6,12 @@ Get Parameters
 with open("requirements.txt") as f:
     required_dependencies = f.read().splitlines()
 
+with open("VERSION") as f:
+    project_version = f.read()
+
 setup(
     name="apitools",
-    version="0.0.2",
+    version=project_version,
     description="demo project",
     python_requires=">3.5.2",
     author="DW",

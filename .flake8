@@ -1,4 +1,4 @@
 [flake8]
 ignore = E501, E128
-exclude = 
-    */__init__.py
+exclude = .git,__py_cache__,build,venv,dist,.*/,python_demo.egg-info/,reports/,**/__init__/py
+max-line-length = 160
